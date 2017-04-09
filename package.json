@@ -6,7 +6,7 @@
   "repository": "git@github.com:avishekjana/react-redux-contentful-blog.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "webpack -p",
+    "postinstall": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors --display-error-details",
     "start": "node server.js"
   },
   "author": "",
