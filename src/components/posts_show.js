@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import marked from 'marked';
+import { Link } from 'react-router';
 
 import { fetchPost } from '../actions/index';
+import Asset from './asset';
 
 class PostsShow extends Component {
 
@@ -23,18 +25,17 @@ class PostsShow extends Component {
     }
 
     return (
-      <div>
-        <section id="wrapper">
-          <header>
-            <div className="inner">
-              <h2>{post.fields.title}</h2>
-            </div>
-          </header>
-          <div className="wrapper">
-            <div className="inner" dangerouslySetInnerHTML={this.renderMarkdown(post.fields.description)} />
-          </div>
-        </section>
-      </div>
+      <section className="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+        <div className="content">
+          <h1>{post.fields.title}</h1>
+          <div className="major" dangerouslySetInnerHTML={this.renderMarkdown(post.fields.description)} />
+          <br />
+          <Link to={"/"} className="button big wide">Back</Link>
+        </div>
+        <div className="image">
+          <Asset assetId={post.fields.featuredImage.sys.id} />
+        </div>
+      </section>
     );
   }
 }
