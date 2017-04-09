@@ -1,14 +1,12 @@
 {
   "name": "react-redux-base",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Simple blog app for Redux with React and Babel support",
   "main": "index.js",
-  "repository": "git@github.com:avishekjana/ReactReduxBase.git",
+  "repository": "git@github.com:avishekjana/react-redux-contentful-blog.git",
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch",
-    "postinstall": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors --display-error-details",
+    "postinstall": "webpack -p",
     "start": "node server.js"
   },
   "author": "",
