@@ -9,5 +9,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'index.html'))
 });
 
-app.listen(port);
-console.log('Server srarted');
+app.listen(port, function () {
+  console.log('Express server listening on %d, in %s mode', port, app.get('env'));
+});
